@@ -9,13 +9,20 @@
 import UIKit
 
 class ItemsViewController: UIViewController {
+    @IBOutlet weak var add_button: UIBarButtonItem!
     
     var model : Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(model)
         // Do any additional setup after loading the view.
+        //Hide Add button base on the mode
+        if(model == false){
+            self.navigationItem.rightBarButtonItem = nil
+        }
+        else{
+            self.navigationItem.rightBarButtonItem = self.add_button
+        }
     }
     
 

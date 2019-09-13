@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4C321B362325847500021287 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C321B352325847500021287 /* ItemsViewController.swift */; };
 		4C321B3C23258CCF00021287 /* ItemsUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C321B3B23258CCF00021287 /* ItemsUINavigationController.swift */; };
+		4C450EC6232B3CEC00C9D69B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */; };
+		4C450EC8232B628000C9D69B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450EC7232B628000C9D69B /* RegisterViewController.swift */; };
 		78114446803347ADB5FBB781 /* Pods_Shopping_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CE2B85ADDFFEB2FFE60E6D /* Pods_Shopping_App.framework */; };
 		927D444523237CDE001CA21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D444423237CDE001CA21A /* AppDelegate.swift */; };
 		927D444723237CDE001CA21A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D444623237CDE001CA21A /* ViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		4C321B352325847500021287 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		4C321B3B23258CCF00021287 /* ItemsUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsUINavigationController.swift; sourceTree = "<group>"; };
+		4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4C450EC7232B628000C9D69B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		513DF8CB1384DCECC6FB55BF /* Pods-Shopping App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping App.release.xcconfig"; path = "Target Support Files/Pods-Shopping App/Pods-Shopping App.release.xcconfig"; sourceTree = "<group>"; };
 		927D444123237CDE001CA21A /* Shopping App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		927D444423237CDE001CA21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				927D445023237CDE001CA21A /* Info.plist */,
 				4C321B352325847500021287 /* ItemsViewController.swift */,
 				4C321B3B23258CCF00021287 /* ItemsUINavigationController.swift */,
+				4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */,
+				4C450EC7232B628000C9D69B /* RegisterViewController.swift */,
 			);
 			path = "Shopping App";
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927D444F23237CDE001CA21A /* LaunchScreen.storyboard in Resources */,
+				4C450EC6232B3CEC00C9D69B /* GoogleService-Info.plist in Resources */,
 				927D444C23237CDE001CA21A /* Assets.xcassets in Resources */,
 				927D444A23237CDE001CA21A /* Main.storyboard in Resources */,
 			);
@@ -172,10 +179,16 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Shopping App/Pods-Shopping App-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -212,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C321B3C23258CCF00021287 /* ItemsUINavigationController.swift in Sources */,
+				4C450EC8232B628000C9D69B /* RegisterViewController.swift in Sources */,
 				927D444723237CDE001CA21A /* ViewController.swift in Sources */,
 				4C321B362325847500021287 /* ItemsViewController.swift in Sources */,
 				927D444523237CDE001CA21A /* AppDelegate.swift in Sources */,
@@ -353,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Z7C6C47SW;
 				INFOPLIST_FILE = "Shopping App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nandunb.me.Shopping-App";
@@ -368,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3Z7C6C47SW;
 				INFOPLIST_FILE = "Shopping App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nandunb.me.Shopping-App";

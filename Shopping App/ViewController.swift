@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -50,18 +51,25 @@ class ViewController: UIViewController {
             
             self.present(alertController, animated: true, completion: nil)
         }
-        else if (username == "vithu" && password == "123"){
-            self.performSegue(withIdentifier: "Items", sender: self)
-            //neeed to pass data Items views
-            
-        }
+        
         else{
             
-            let alertController = UIAlertController(title: "ERORR", message:
-                "Please Check Your USER NAME and PASSWORD !!", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            Auth.auth().signIn(withEmail: username!, password: password!) { [weak self] user, error in
+                //guard let strongSelf = self else { return }
+                if let error = error {
+                    let alertController = UIAlertController(title: "ERORR", message:
+                        "Please Check Your USER NAME and PASSWORD !! -- > Error : " + error.localizedDescription, preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                    
+                    self?.present(alertController, animated: true, completion: nil)
+                    return
+                }
+                
+                self?.performSegue(withIdentifier: "Items", sender: self)
+                
+            }
             
-            self.present(alertController, animated: true, completion: nil)
+            
             
         }
     }
