@@ -301,12 +301,12 @@
         <!--ZARA-->
         <scene sceneID="oEO-QU-Oyl">
             <objects>
-                <viewController id="Qbk-0v-sq9" sceneMemberID="viewController">
+                <viewController id="Qbk-0v-sq9" customClass="MapViewController" customModule="Shopping_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HZC-Jj-w6Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cjJ-x6-0kn">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cjJ-x6-0kn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
@@ -315,6 +315,9 @@
                         <viewLayoutGuide key="safeArea" id="NQa-s9-xEl"/>
                     </view>
                     <navigationItem key="navigationItem" title="ZARA" id="3hU-PI-E3Z"/>
+                    <connections>
+                        <outlet property="Seller_location" destination="cjJ-x6-0kn" id="qVe-lh-zwc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5J-bh-AIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
