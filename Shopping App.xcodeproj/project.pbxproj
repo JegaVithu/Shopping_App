@@ -12,6 +12,8 @@
 		4C450EC6232B3CEC00C9D69B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */; };
 		4C450EC8232B628000C9D69B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450EC7232B628000C9D69B /* RegisterViewController.swift */; };
 		4C450ECA232C058000C9D69B /* ItemSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450EC9232C058000C9D69B /* ItemSingleViewController.swift */; };
+		4C450ECC232D2A6300C9D69B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450ECB232D2A6300C9D69B /* MapViewController.swift */; };
+		4C450ECE232D330700C9D69B /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450ECD232D330700C9D69B /* Artwork.swift */; };
 		78114446803347ADB5FBB781 /* Pods_Shopping_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CE2B85ADDFFEB2FFE60E6D /* Pods_Shopping_App.framework */; };
 		927D444523237CDE001CA21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D444423237CDE001CA21A /* AppDelegate.swift */; };
 		927D444723237CDE001CA21A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D444623237CDE001CA21A /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 		4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C450EC7232B628000C9D69B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4C450EC9232C058000C9D69B /* ItemSingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSingleViewController.swift; sourceTree = "<group>"; };
+		4C450ECB232D2A6300C9D69B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4C450ECD232D330700C9D69B /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		513DF8CB1384DCECC6FB55BF /* Pods-Shopping App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping App.release.xcconfig"; path = "Target Support Files/Pods-Shopping App/Pods-Shopping App.release.xcconfig"; sourceTree = "<group>"; };
 		927D444123237CDE001CA21A /* Shopping App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		927D444423237CDE001CA21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */,
 				4C450EC7232B628000C9D69B /* RegisterViewController.swift */,
 				4C450EC9232C058000C9D69B /* ItemSingleViewController.swift */,
+				4C450ECB232D2A6300C9D69B /* MapViewController.swift */,
+				4C450ECD232D330700C9D69B /* Artwork.swift */,
 			);
 			path = "Shopping App";
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 				TargetAttributes = {
 					927D444023237CDE001CA21A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -231,10 +238,12 @@
 			files = (
 				4C321B3C23258CCF00021287 /* ItemsUINavigationController.swift in Sources */,
 				4C450ECA232C058000C9D69B /* ItemSingleViewController.swift in Sources */,
+				4C450ECE232D330700C9D69B /* Artwork.swift in Sources */,
 				4C450EC8232B628000C9D69B /* RegisterViewController.swift in Sources */,
 				927D444723237CDE001CA21A /* ViewController.swift in Sources */,
 				4C321B362325847500021287 /* ItemsViewController.swift in Sources */,
 				927D444523237CDE001CA21A /* AppDelegate.swift in Sources */,
+				4C450ECC232D2A6300C9D69B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +387,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nandunb.me.Shopping-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -394,7 +404,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nandunb.me.Shopping-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
