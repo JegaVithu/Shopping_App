@@ -17,28 +17,48 @@ class ItemSingleViewController: UIViewController {
     @IBOutlet weak var item_price: UILabel!
     @IBOutlet weak var iteam_image: UIImageView!
     
+    var data: JSON?
+    var model : Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(data!)
         // Do any additional setup after loading the view.
         
-        Alamofire.request("http://ec2-3-15-177-123.us-east-2.compute.amazonaws.com:3000/items").responseJSON {response in
-            do {
-                let json = try JSON(data: response.data!)
-                self.item_title.text = json["items"][0]["title"].string
-                self.item_des.text = json["items"][0]["description"].string
-                self.item_price.text = json["items"][0]["price"].string
-                
-                let url = URL(string: json["items"][0]["image_url"].string!)
+        //Load data
+        if let data = data {
+                self.item_title.text = data["title"].string
+                self.item_des.text = data["description"].string
+                self.item_price.text = data["price"].string
+
+                let url = URL(string: data["image_url"].string!)
                 let data = try? Data(contentsOf: url!)
                 self.iteam_image.image = UIImage(data: data!)
-            }
-            catch {
-                print(error)
-            }
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "Location") {
+            // pass data to next view
+            
+            let viewController = segue.destination as! ItemLocationViewController
+            let secondViewcontroller = viewController.topViewController as! MapViewController
+            secondViewcontroller.data = data
+            secondViewcontroller.model = model
+            
+        }
+        
+        if (segue.identifier == "SingleBack") {
+            // pass data to next view
+            
+            let viewController = segue.destination as! ItemsUINavigationController
+            let secondViewcontroller = viewController.topViewController as! ItemsViewController
+            secondViewcontroller.model = model
+            
+        }
+    }
+    
+    //Location
+    //SingleBack
 
     /*
     // MARK: - Navigation

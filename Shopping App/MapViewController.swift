@@ -14,18 +14,20 @@ import SwiftyJSON
 class MapViewController: UIViewController {
     @IBOutlet weak var Seller_location: MKMapView!
     
+    var data: JSON?
+    var model : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Location data")
+        print(data!)
         // Do any additional setup after loading the view.
         
         //coordinated get from backend
         
-        Alamofire.request("http://ec2-3-15-177-123.us-east-2.compute.amazonaws.com:3000/items").responseJSON {response in
-            do {
-                let json = try JSON(data: response.data!)
-                let lat = Double(json["items"][0]["latitude"].string!)
-                let lon = Double(json["items"][0]["longitude"].string!)
+                if let data = data {
+                let lat = Double(data["latitude"].string!)
+                let lon = Double(data["longitude"].string!)
 
 //                // show artwork on map
                 let artwork = Artwork(title: "Seller Location",
@@ -33,14 +35,22 @@ class MapViewController: UIViewController {
                                       discipline: "Seller Location",
                                       coordinate: CLLocationCoordinate2D(latitude: lat!, longitude: lon!))
                 self.Seller_location.addAnnotation(artwork)
-
-            }
-            catch {
-                print(error)
-            }
         }
         
             }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "LocationBack") {
+            // pass data to next view
+            
+            let viewController = segue.destination as! SingleItemViewController
+            let secondViewcontroller = viewController.topViewController as! ItemSingleViewController
+            secondViewcontroller.data = data
+            secondViewcontroller.model = model
+            
+        }
+    }
+
     
 
     /*
