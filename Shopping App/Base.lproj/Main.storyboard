@@ -261,6 +261,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dRn-iH-4zt">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="99" id="3xg-5u-bMU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="99"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3xg-5u-bMU" id="rrn-sx-ITQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="DVO-R9-M1p" kind="presentation" identifier="singleview" id="leo-8F-t3G"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -288,11 +301,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="add_button" destination="VBh-Sk-mZs" id="rai-aI-cIt"/>
+                        <outlet property="item_table_view" destination="dRn-iH-4zt" id="be1-qS-AGh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJj-oG-2vt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1257" y="20"/>
+            <point key="canvasLocation" x="-1258.4000000000001" y="19.340329835082461"/>
         </scene>
         <!--ZARA-->
         <scene sceneID="JO4-WA-dQj">
@@ -348,7 +362,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jmj-wI-PHo"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ZARA" id="YMV-on-xtb"/>
+                    <navigationItem key="navigationItem" title="ZARA" id="YMV-on-xtb">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="o8c-1j-NUu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="5tl-Ih-4GN" kind="presentation" identifier="SingleBack" id="UQg-r0-abp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="iteam_image" destination="idh-7U-1Ih" id="1p4-29-YLN"/>
                         <outlet property="item_des" destination="2Ew-hb-wMU" id="Mvz-IH-QnV"/>
@@ -358,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBB-Mk-fBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="18.440779610194905"/>
+            <point key="canvasLocation" x="196" y="18"/>
         </scene>
         <!--ZARA-->
         <scene sceneID="oEO-QU-Oyl">
@@ -376,14 +397,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NQa-s9-xEl"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ZARA" id="3hU-PI-E3Z"/>
+                    <navigationItem key="navigationItem" title="ZARA" id="3hU-PI-E3Z">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="FS7-sK-L48">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="DVO-R9-M1p" kind="presentation" identifier="LocationBack" id="iYa-za-i8T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="Seller_location" destination="cjJ-x6-0kn" id="qVe-lh-zwc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5J-bh-AIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1509.5999999999999" y="19.340329835082461"/>
+            <point key="canvasLocation" x="1769" y="19"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jN0-Yr-9Bn">
@@ -463,10 +491,11 @@
             </objects>
             <point key="canvasLocation" x="-2628" y="765.96701649175418"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Single Item View Controller-->
         <scene sceneID="sNs-Sh-xBT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVO-R9-M1p" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pg-7G-b6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DVO-R9-M1p" customClass="SingleItemViewController" customModule="Shopping_App" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jPI-r7-Yja">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -482,16 +511,15 @@
                         <segue destination="lRO-so-cXa" kind="relationship" relationship="rootViewController" id="SZV-lR-TSP"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pg-7G-b6l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="20"/>
+            <point key="canvasLocation" x="-498" y="19"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item Location View Controller-->
         <scene sceneID="5H2-YF-0ng">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W5Z-Q3-u3f" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="W5Z-Q3-u3f" customClass="ItemLocationViewController" customModule="Shopping_App" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1B3-IQ-Swt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1B3-IQ-Swt" customClass="ItemLo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.42445996850000001" green="0.12924462889999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -507,7 +535,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sp-Uf-ykZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837.60000000000002" y="17.541229385307346"/>
+            <point key="canvasLocation" x="1006" y="18"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FSs-yY-iYP">
@@ -534,6 +562,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0wv-1d-4VL"/>
+        <segue reference="so3-kk-ccQ"/>
+        <segue reference="iYa-za-i8T"/>
+        <segue reference="UQg-r0-abp"/>
+        <segue reference="YAq-7Z-75w"/>
     </inferredMetricsTieBreakers>
 </document>
