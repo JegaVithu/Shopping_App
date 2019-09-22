@@ -81,31 +81,39 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // create a new cell if needed or reuse an old one
-        let cell:UITableViewCell = self.item_table_view.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! UITableViewCell
+//        let cell = self.item_table_view.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as? ShowItemTableViewCell
+        var cell = item_table_view.dequeueReusableCell(withIdentifier: "reuseIdentifier")
+        if cell == nil {
+            cell = UITableViewCell(style: .value1, reuseIdentifier: "reuseIdentifier")
+        }
         
         if let data = data {
-            
             // set the text from the data model
-            cell.textLabel?.text = data[indexPath.row]["title"].string
-            cell.detailTextLabel?.text = data[indexPath.row]["price"].string
-            let url = URL(string: data[indexPath.row]["image_url"].string!)
+        cell?.textLabel?.text = data[indexPath.row]["title"].string
+        cell?.detailTextLabel?.text = data[indexPath.row]["price"].string
+        let url = URL(string: data[indexPath.row]["image_url"].string!)
             let dataa = try? Data(contentsOf: url!)
             if let img = dataa{
                 
-                cell.imageView?.image = UIImage(data: img)
+                cell?.imageView?.image = UIImage(data: img)
             }
+            
 
             
         }
+       
+        return cell!
         
-        return cell
-        
-        
+
     }
     
-    // method to run when table view cell is tapped
+    // method to run when table view cell is tap
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(data![indexPath.row])
         current_item = data![indexPath.row]
@@ -121,6 +129,15 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
              secondViewcontroller.data = current_item
             secondViewcontroller.model = model
            
+        }
+        
+        if (segue.identifier == "add") {
+            // pass data to next view
+            
+            let viewController = segue.destination as! AddItemViewController
+            let secondViewcontroller = viewController.topViewController as! AddViewController
+            secondViewcontroller.model = model
+            
         }
     }
 

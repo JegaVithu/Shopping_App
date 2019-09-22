@@ -17,6 +17,8 @@
 		4C77BCCF23376895006EB7C2 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C77BCCE23376895006EB7C2 /* AddViewController.swift */; };
 		4CF8C7962337DAAF0048EB2D /* SingleItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8C7952337DAAF0048EB2D /* SingleItemViewController.swift */; };
 		4CF8C7982337DF5C0048EB2D /* ItemLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8C7972337DF5C0048EB2D /* ItemLocationViewController.swift */; };
+		4CF8C79A2337E65C0048EB2D /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8C7992337E65C0048EB2D /* AddItemViewController.swift */; };
+		4CF8C79C2337E9E70048EB2D /* ShowItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8C79B2337E9E70048EB2D /* ShowItemTableViewCell.swift */; };
 		78114446803347ADB5FBB781 /* Pods_Shopping_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CE2B85ADDFFEB2FFE60E6D /* Pods_Shopping_App.framework */; };
 		927D444523237CDE001CA21A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D444423237CDE001CA21A /* AppDelegate.swift */; };
 		927D444723237CDE001CA21A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D444623237CDE001CA21A /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 		4C77BCCE23376895006EB7C2 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		4CF8C7952337DAAF0048EB2D /* SingleItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemViewController.swift; sourceTree = "<group>"; };
 		4CF8C7972337DF5C0048EB2D /* ItemLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLocationViewController.swift; sourceTree = "<group>"; };
+		4CF8C7992337E65C0048EB2D /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		4CF8C79B2337E9E70048EB2D /* ShowItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowItemTableViewCell.swift; sourceTree = "<group>"; };
 		513DF8CB1384DCECC6FB55BF /* Pods-Shopping App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopping App.release.xcconfig"; path = "Target Support Files/Pods-Shopping App/Pods-Shopping App.release.xcconfig"; sourceTree = "<group>"; };
 		927D444123237CDE001CA21A /* Shopping App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopping App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		927D444423237CDE001CA21A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				4C77BCCE23376895006EB7C2 /* AddViewController.swift */,
 				4CF8C7952337DAAF0048EB2D /* SingleItemViewController.swift */,
 				4CF8C7972337DF5C0048EB2D /* ItemLocationViewController.swift */,
+				4CF8C7992337E65C0048EB2D /* AddItemViewController.swift */,
+				4CF8C79B2337E9E70048EB2D /* ShowItemTableViewCell.swift */,
 			);
 			path = "Shopping App";
 			sourceTree = "<group>";
@@ -250,10 +256,12 @@
 				4C77BCCF23376895006EB7C2 /* AddViewController.swift in Sources */,
 				4C450ECE232D330700C9D69B /* Artwork.swift in Sources */,
 				4C450EC8232B628000C9D69B /* RegisterViewController.swift in Sources */,
+				4CF8C79A2337E65C0048EB2D /* AddItemViewController.swift in Sources */,
 				4CF8C7962337DAAF0048EB2D /* SingleItemViewController.swift in Sources */,
 				927D444723237CDE001CA21A /* ViewController.swift in Sources */,
 				4CF8C7982337DF5C0048EB2D /* ItemLocationViewController.swift in Sources */,
 				4C321B362325847500021287 /* ItemsViewController.swift in Sources */,
+				4CF8C79C2337E9E70048EB2D /* ShowItemTableViewCell.swift in Sources */,
 				927D444523237CDE001CA21A /* AppDelegate.swift in Sources */,
 				4C450ECC232D2A6300C9D69B /* MapViewController.swift in Sources */,
 			);

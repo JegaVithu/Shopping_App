@@ -21,6 +21,7 @@ class AddViewController: UIViewController {
     var locManager = CLLocationManager()
     var log : Double = 8.00
     var lat : Double = 9.00
+    var model : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +52,18 @@ class AddViewController: UIViewController {
             print(response.result)
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if (segue.identifier == "AddBack") {
+            // pass data to next view
+            
+            let viewController = segue.destination as! ItemsUINavigationController
+            let secondViewcontroller = viewController.topViewController as! ItemsViewController
+            secondViewcontroller.model = model
+            
+        }
     }
     
     /*
