@@ -52,11 +52,51 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     @IBAction func Upload(_ sender: UIButton) {
         
-        let parameters = ["title": item_title.text!, "description":item_descri.text!, "price": item_price.text!, "longitude":log, "latitude":lat, "image_url":item_image_url] as [String : Any]
-        
-        Alamofire.request("http://ec2-3-15-177-123.us-east-2.compute.amazonaws.com:3000/items", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
-            print(response.result)
+        if(item_title.text == "" || item_price.text == "" || item_descri.text == "" || item_image.image == nil ){
+            let alertController = UIAlertController(title: "ERORR", message:
+                "YOU SHOULD FILL ALL FIELDS IN THIS FORM INCLUDE IMAGE ATTACH ALSO !!", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
         }
+        
+        else if(item_image_url == ""){
+            
+            let alertController = UIAlertController(title: "ERORR", message:
+                "PLEASE WAIT FEW MINITES BECOZ IMAGE UPLOAD WILL BE TAKE LITTLE BIT TIME !!", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
+        
+        else{
+            let parameters = ["title": item_title.text!, "description":item_descri.text!, "price": item_price.text!, "longitude":log, "latitude":lat, "image_url":item_image_url] as [String : Any]
+            
+            Alamofire.request("http://ec2-3-15-177-123.us-east-2.compute.amazonaws.com:3000/items", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
+                print(response.result.isSuccess)
+                
+                if (response.result.isSuccess == true){
+                    let alertController = UIAlertController(title: "SUCCESS", message:
+                        "YOUR ITEM HAS SUCCESSFULLY POSTED !!", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    self.item_title.text = ""
+                    self.item_descri.text = ""
+                    self.item_price.text = ""
+                    self.item_image.image = nil
+                    
+                }
+                else{
+                    let alertController = UIAlertController(title: "ERORR", message:
+                        "FAILD TRY AGAIN !!", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+       
         
     }
     
@@ -122,6 +162,11 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                     let image_url = url
                     self.item_image_url = image_url!.absoluteString
                     print(self.item_image_url)
+                    let alertController = UIAlertController(title: "INFOR", message:
+                        "IMAGE HAS UPLOADED SUCCESSFULLY. PLEASE CLICK ON UPLOAD BUTTON!!", preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+                    
+                    self.present(alertController, animated: true, completion: nil)
                 }
             }
         }
