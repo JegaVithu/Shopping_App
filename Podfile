@@ -9,6 +9,7 @@ target 'Shopping App' do
    pod 'Alamofire', '~> 4.7.0-rc.1'
    pod 'Firebase/Auth'
    pod 'SwiftyJSON', '~> 3.0'
+   pod 'Firebase/Storage'
 
 
 end

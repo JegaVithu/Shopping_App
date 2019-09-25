@@ -10,9 +10,10 @@ import UIKit
 import  MapKit
 import Alamofire
 import SwiftyJSON
+import FirebaseStorage
 
 
-class AddViewController: UIViewController {
+class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var item_title: UITextField!
     @IBOutlet weak var item_descri: UITextView!
     @IBOutlet weak var item_price: UITextField!
@@ -22,6 +23,10 @@ class AddViewController: UIViewController {
     var log : Double = 8.00
     var lat : Double = 9.00
     var model : Bool = false
+    
+    var item_image_url = ""
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +51,8 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func Upload(_ sender: UIButton) {
-        let parameters = ["title": item_title.text!, "description":item_descri.text!, "price": item_price.text!, "longitude":log, "latitude":lat] as [String : Any]
+        
+        let parameters = ["title": item_title.text!, "description":item_descri.text!, "price": item_price.text!, "longitude":log, "latitude":lat, "image_url":item_image_url] as [String : Any]
         
         Alamofire.request("http://ec2-3-15-177-123.us-east-2.compute.amazonaws.com:3000/items", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { response in
             print(response.result)
@@ -55,6 +61,16 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func Image_Add(_ sender: UIButton) {
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction) in
+            self.getImage(fromSourceType: .camera)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Album", style: .default, handler: {(action: UIAlertAction) in
+            self.getImage(fromSourceType: .photoLibrary)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
         
     }
     
@@ -70,6 +86,51 @@ class AddViewController: UIViewController {
         }
     }
     
+    
+    //get image from source type
+    func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
+        
+        //Check is source type available
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+            
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.delegate = self
+            imagePickerController.sourceType = sourceType
+            self.present(imagePickerController, animated: true, completion: nil)
+        }
+    }
+    
+    //set the image in image view
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as! UIImage
+        item_image.image = image // profile image
+        //imageData = image
+        self.dismiss(animated: true, completion: nil)
+        
+        //upload data to firebase
+        let number = Int.random(in: 0 ..< 1000000000000)
+        let filename = String(number) + ".png"
+        let image_data = image.pngData()
+        let storageRef = Storage.storage().reference().child(filename)
+        storageRef.putData(image_data!, metadata: nil) { (metadata, error) in
+            if error != nil {
+                //err
+               
+            } else {
+                //success
+                storageRef.downloadURL { (url, error) in
+                    let image_url = url
+                    self.item_image_url = image_url!.absoluteString
+                    print(self.item_image_url)
+                }
+            }
+        }
+        
+    }
+    
+
+
+
     /*
     // MARK: - Navigation
 
