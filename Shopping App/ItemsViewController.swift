@@ -96,7 +96,7 @@ class ItemsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let data = data {
             // set the text from the data model
         cell?.textLabel?.text = data[indexPath.row]["title"].string
-        cell?.detailTextLabel?.text = data[indexPath.row]["price"].string
+            cell?.detailTextLabel?.text = "LKR " +  data[indexPath.row]["price"].string!
         let url = URL(string: data[indexPath.row]["image_url"].string!)
             let dataa = try? Data(contentsOf: url!)
             if let img = dataa{
