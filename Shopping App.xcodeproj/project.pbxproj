@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		4C321B362325847500021287 /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C321B352325847500021287 /* ItemsViewController.swift */; };
 		4C321B3C23258CCF00021287 /* ItemsUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C321B3B23258CCF00021287 /* ItemsUINavigationController.swift */; };
-		4C450EC6232B3CEC00C9D69B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */; };
 		4C450EC8232B628000C9D69B /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450EC7232B628000C9D69B /* RegisterViewController.swift */; };
 		4C450ECA232C058000C9D69B /* ItemSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450EC9232C058000C9D69B /* ItemSingleViewController.swift */; };
 		4C450ECC232D2A6300C9D69B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450ECB232D2A6300C9D69B /* MapViewController.swift */; };
 		4C450ECE232D330700C9D69B /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C450ECD232D330700C9D69B /* Artwork.swift */; };
 		4C77BCCF23376895006EB7C2 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C77BCCE23376895006EB7C2 /* AddViewController.swift */; };
+		4CA1FF8F233C181100D66FD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CA1FF8E233C181100D66FD7 /* GoogleService-Info.plist */; };
 		4CF8C7962337DAAF0048EB2D /* SingleItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8C7952337DAAF0048EB2D /* SingleItemViewController.swift */; };
 		4CF8C7982337DF5C0048EB2D /* ItemLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8C7972337DF5C0048EB2D /* ItemLocationViewController.swift */; };
 		4CF8C79A2337E65C0048EB2D /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF8C7992337E65C0048EB2D /* AddItemViewController.swift */; };
@@ -30,12 +30,12 @@
 /* Begin PBXFileReference section */
 		4C321B352325847500021287 /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		4C321B3B23258CCF00021287 /* ItemsUINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsUINavigationController.swift; sourceTree = "<group>"; };
-		4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C450EC7232B628000C9D69B /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4C450EC9232C058000C9D69B /* ItemSingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSingleViewController.swift; sourceTree = "<group>"; };
 		4C450ECB232D2A6300C9D69B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4C450ECD232D330700C9D69B /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		4C77BCCE23376895006EB7C2 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		4CA1FF8E233C181100D66FD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4CF8C7952337DAAF0048EB2D /* SingleItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemViewController.swift; sourceTree = "<group>"; };
 		4CF8C7972337DF5C0048EB2D /* ItemLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLocationViewController.swift; sourceTree = "<group>"; };
 		4CF8C7992337E65C0048EB2D /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -108,9 +108,9 @@
 				927D444B23237CDE001CA21A /* Assets.xcassets */,
 				927D444D23237CDE001CA21A /* LaunchScreen.storyboard */,
 				927D445023237CDE001CA21A /* Info.plist */,
+				4CA1FF8E233C181100D66FD7 /* GoogleService-Info.plist */,
 				4C321B352325847500021287 /* ItemsViewController.swift */,
 				4C321B3B23258CCF00021287 /* ItemsUINavigationController.swift */,
-				4C450EC5232B3CEC00C9D69B /* GoogleService-Info.plist */,
 				4C450EC7232B628000C9D69B /* RegisterViewController.swift */,
 				4C450EC9232C058000C9D69B /* ItemSingleViewController.swift */,
 				4C450ECB232D2A6300C9D69B /* MapViewController.swift */,
@@ -187,7 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				927D444F23237CDE001CA21A /* LaunchScreen.storyboard in Resources */,
-				4C450EC6232B3CEC00C9D69B /* GoogleService-Info.plist in Resources */,
+				4CA1FF8F233C181100D66FD7 /* GoogleService-Info.plist in Resources */,
 				927D444C23237CDE001CA21A /* Assets.xcassets in Resources */,
 				927D444A23237CDE001CA21A /* Main.storyboard in Resources */,
 			);

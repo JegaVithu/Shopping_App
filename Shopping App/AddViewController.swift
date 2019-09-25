@@ -135,6 +135,7 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             
             let imagePickerController = UIImagePickerController()
             imagePickerController.delegate = self
+            imagePickerController.allowsEditing = true
             imagePickerController.sourceType = sourceType
             self.present(imagePickerController, animated: true, completion: nil)
         }
@@ -142,7 +143,9 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     //set the image in image view
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[.originalImage] as! UIImage
+        guard let image = info[.editedImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
         item_image.image = image // profile image
         //imageData = image
         self.dismiss(animated: true, completion: nil)

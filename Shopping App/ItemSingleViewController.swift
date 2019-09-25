@@ -29,8 +29,8 @@ class ItemSingleViewController: UIViewController {
                 self.item_title.text = data["title"].string
                 self.item_des.text = data["description"].string
                 self.item_price.text = data["price"].string
-
-                let url = URL(string: data["image_url"].string!)
+                let array = data["image_url"].string!.components(separatedBy: ",")
+                let url = URL(string: array[0])
                 let data = try? Data(contentsOf: url!)
                 self.iteam_image.image = UIImage(data: data!)
         }
