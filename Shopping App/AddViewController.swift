@@ -54,6 +54,10 @@ class AddViewController: UIViewController {
         
     }
     
+    @IBAction func Image_Add(_ sender: UIButton) {
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
         if (segue.identifier == "AddBack") {
